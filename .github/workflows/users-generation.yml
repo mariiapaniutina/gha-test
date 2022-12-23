@@ -11,10 +11,7 @@ jobs:
 
       - name: Get All users from simple API
         run: |
-          responses=$(aws ecr list-images --repository-name ${{ secrets.awsEcrRepository }} | (jq '.imageIds'))
-          output=""
-          for release in $(echo $responses | jq '.[] | .imageTag')
-          do
-             output+="- $release\n          "
-          done
-          sed "s/\$USER_OPTIONS/$output/g" $GITHUB_WORKSPACE/.github/workflows/deployment.user-template.yml > $GITHUB_WORKSPACE/.github/workflows/user-deployment.yml
+          output="- userone\n          "
+          output+="- usertwo\n          "
+          output+="- userthree\n          "
+          sed "s/\$USER_OPTIONS/$output/g" $GITHUB_WORKSPACE/.github/workflows/user-deployment.yml
