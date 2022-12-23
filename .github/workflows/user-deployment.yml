@@ -6,8 +6,7 @@ on:
         type: choice
         description: List of usernames
         options: 
-        - first user
-        - second user
+          $USER_OPTIONS
 
 jobs:
   build:
