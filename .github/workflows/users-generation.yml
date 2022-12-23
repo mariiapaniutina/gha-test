@@ -1,0 +1,20 @@
+name: Users generation
+
+on: 
+  # NOTE :: we can add pull request closed, etc
+  workflow_dispatch:
+  
+jobs:
+  get-users-list:
+    runs-on: ubuntu-latest
+    steps:
+
+      - name: Get All users from simple API
+        run: |
+          responses=$(aws ecr list-images --repository-name ${{ secrets.awsEcrRepository }} | (jq '.imageIds'))
+          output=""
+          for release in $(echo $responses | jq '.[] | .imageTag')
+          do
+             output+="- $release\n          "
+          done
+          sed "s/\$USER_OPTIONS/$output/g" $GITHUB_WORKSPACE/.github/workflows/deployment.user-template.yml > $GITHUB_WORKSPACE/.github/workflows/user-deployment.yml
