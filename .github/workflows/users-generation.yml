@@ -21,3 +21,11 @@ jobs:
           # echo ${{ env.home}}
           # sed "s/\$USER_OPTIONS/$output/" user-deployment.yml
           sed "s/\$USER_OPTIONS/- one/" .github/workflows/user-deployment.yml
+          
+      - name: Commit & Push
+        uses: Andro999b/push@v1.3
+        with:
+          github_token: ${{ secrets.GITHUB_TOKEN }}
+          branch: main
+          force: true
+          message: 'Overwritten by Github Actions - ${date}'
