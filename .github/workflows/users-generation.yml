@@ -18,3 +18,4 @@ jobs:
           echo "list `ls -la`"
           echo $output
           # sed "s/\$USER_OPTIONS/$output/" user-deployment.yml
+          sed "s/$USER_OPTIONS/- one/" gha-test/.github/workflows/user-deployment.yml
