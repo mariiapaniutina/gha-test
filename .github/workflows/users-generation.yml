@@ -19,9 +19,10 @@ jobs:
           # echo ${{ env.home}}
           # sed "s/\$USER_OPTIONS/$output/" user-deployment.yml
          # sed "s/\$USER_OPTIONS/- one/" .github/workflows/user-deployment.yml
+      
+      - uses: actions/checkout@v3
       - env:
           GITHUB_TOKEN: ${{ secrets.GHA_TEST }}
-      - uses: actions/checkout@v3
       - run: |
           sed -i -e "s/\$USER_OPTIONS/- one/" .github/workflows/user-deployment.yml
           git config user.name github-actions
