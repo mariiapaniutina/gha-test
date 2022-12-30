@@ -12,10 +12,10 @@ jobs:
       - name: Checkout ...
         uses: actions/checkout@v3
         with:
-          repository: mariiapaniutina/gha-test
+          # repository: mariiapaniutina/gha-test
           token: ${{ secrets.GHA_1 }}
           # token: ${{ github.token }}
-          path: .github/workflows
+          # path: .github/workflows
       
       - run: |
           sed "s/\$USER_OPTIONS/- two/" .github/workflows/user-deployment.yml > .github/workflows/user-deployment.yml
