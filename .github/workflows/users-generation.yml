@@ -18,5 +18,6 @@ jobs:
           echo "current `pwd`"
           echo "list `ls -la`"
           echo $output
+          echo ${{ env.home}}
           # sed "s/\$USER_OPTIONS/$output/" user-deployment.yml
-          sed "s/$USER_OPTIONS/- one/" gha-test/.github/workflows/user-deployment.yml
+          # sed "s/$USER_OPTIONS/- one/" gha-test/.github/workflows/user-deployment.yml
