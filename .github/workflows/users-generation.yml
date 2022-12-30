@@ -23,10 +23,13 @@ jobs:
           # sed "s/\$USER_OPTIONS/$output/" user-deployment.yml
           sed "s/\$USER_OPTIONS/- one/" .github/workflows/user-deployment.yml
           
-      - name: Commit & Push
-        uses: Andro999b/push@v1.3
-        with:
-          github_token: ${{ secrets.GHA-TEST }}
-          branch: main
-          force: true
-          message: 'Overwritten by Github Actions'
+      - name: committing in workflow
+        env:
+            GITHUB_TOKEN: ${{ secrets.GHA-TEST }}
+        run: |
+            # sed "s/\$USER_OPTIONS/- one/" .github/workflows/user-deployment.yml
+            git config user.name github-actions
+            git config user.email github-actions@github.com
+            git add .
+            git commit -m 'Overwritten by Github Actions'
+            git push
