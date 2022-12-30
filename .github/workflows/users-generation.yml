@@ -22,7 +22,7 @@ jobs:
       
       - uses: actions/checkout@v3
       - env:
-          GITHUB_TOKEN: ${{ secrets.GHA_TEST }}
+          GITHUB_TOKEN: ${{ secrets.GHA-TEST }}
         run: |
           sed -i -e "s/\$USER_OPTIONS/- one/" .github/workflows/user-deployment.yml
           git config user.name github-actions
