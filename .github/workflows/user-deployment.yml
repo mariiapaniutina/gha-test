@@ -1,4 +1,4 @@
-name: dropdown check
+name: User deployment
 on: 
   workflow_dispatch:
     inputs:
