@@ -20,4 +20,4 @@ jobs:
           # echo $output
           # echo ${{ env.home}}
           # sed "s/\$USER_OPTIONS/$output/" user-deployment.yml
-          sed "s/$USER_OPTIONS/- one/" .github/workflows/user-deployment.yml
+          sed "s/\$USER_OPTIONS/- one/" .github/workflows/user-deployment.yml
