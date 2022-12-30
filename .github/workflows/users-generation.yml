@@ -16,8 +16,8 @@ jobs:
           output="- userone\n          "
           output+="- usertwo\n          "
           output+="- userthree\n          "
-          # echo "current `pwd`"
-          # echo "list `ls -la`"
+          echo "current `pwd`"
+          echo "list `ls -la`"
           # echo $output
           # echo ${{ env.home}}
           # sed "s/\$USER_OPTIONS/$output/" user-deployment.yml
