@@ -8,22 +8,11 @@ jobs:
   get-users-list:
     runs-on: ubuntu-latest
     steps:
-      # - name: Get All users from simple API
-      #  run: |
-      #    output="- userone\n          "
-      #    output+="- usertwo\n          "
-      #   output+="- userthree\n          "
-          # echo "current `pwd`"
-          # echo "list `ls -la`"
-          # echo $output
-          # echo ${{ env.home}}
-          # sed "s/\$USER_OPTIONS/$output/" user-deployment.yml
-         # sed "s/\$USER_OPTIONS/- one/" .github/workflows/user-deployment.yml
-      
-      - uses: actions/checkout@v3
-      - env:
-          GITHUB_TOKEN: ${{ secrets.GHA-TEST }}
-          run: |
+      # - uses: actions/checkout@v3
+      - name: committing in workflow
+        env:
+            GITHUB_TOKEN: ${{ secrets.GHA-TEST }}
+        run: |
             echo ${{ secrets }}
             sed -i -e "s/\$USER_OPTIONS/- one/" .github/workflows/user-deployment.yml
             git config user.name github-actions
