@@ -20,7 +20,7 @@ jobs:
       - name: committing in workflow
         env:
           GITHUB_TOKEN: ${{ secrets.GHA_1}}
-      - run: |
+        run: |
           sed "s/\$USER_OPTIONS/- two/" .github/workflows/user-deployment.yml > .github/workflows/user-deployment.yml
           git status
           # git config user.name github-actions
