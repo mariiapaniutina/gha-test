@@ -12,13 +12,13 @@ jobs:
       - name: Checkout ...
         uses: actions/checkout@v3
         with:
-          repository: mariiapaniutina/gha-test
-          # token: ${{ secrets.GHA-TEST }}
-          token: ${{ github.token }}
-          path: .github/workflows
+          # repository: mariiapaniutina/gha-test
+          token: ${{ secrets.GHA-TEST }}
+          # token: ${{ github.token }}
+          # path: .github/workflows
       
       - run: |
-          sed "s/\$USER_OPTIONS/- two/" user-deployment.yml > user-deployment.yml
+          sed "s/\$USER_OPTIONS/- two/" .github/workflows/user-deployment.yml > .github/workflows/user-deployment.yml
           git status
           # git config user.name github-actions
           # git config user.email github-actions@github.com
