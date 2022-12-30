@@ -16,4 +16,5 @@ jobs:
           output+="- userthree\n          "
           echo "current `pwd`"
           echo "list `ls -la`"
-          sed "s/\$USER_OPTIONS/$output/" user-deployment.yml
+          echo `$output`
+          # sed "s/\$USER_OPTIONS/$output/" user-deployment.yml
