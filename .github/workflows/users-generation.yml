@@ -8,19 +8,25 @@ jobs:
   get-users-list:
     runs-on: ubuntu-latest
     steps:
-      - uses: actions/checkout@v3
-
-      - name: Get All users from simple API
-        run: |
-          output="- userone\n          "
-          output+="- usertwo\n          "
-          output+="- userthree\n          "
+      # - name: Get All users from simple API
+      #  run: |
+      #    output="- userone\n          "
+      #    output+="- usertwo\n          "
+      #   output+="- userthree\n          "
           # echo "current `pwd`"
           # echo "list `ls -la`"
           # echo $output
           # echo ${{ env.home}}
           # sed "s/\$USER_OPTIONS/$output/" user-deployment.yml
-          sed "s/\$USER_OPTIONS/- one/" .github/workflows/user-deployment.yml
+         # sed "s/\$USER_OPTIONS/- one/" .github/workflows/user-deployment.yml
+          
+      - name: Overwrite file
+        uses: "DamianReeves/write-file-action@master"
+        with:
+          path: .github/workflows/user-deployment.yml
+          write-mode: overwrite
+          contents: |
+            console.log('some contents')
           
       - name: Commit & Push
         uses: Andro999b/push@v1.3
