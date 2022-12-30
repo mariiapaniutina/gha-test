@@ -10,6 +10,8 @@ jobs:
     steps:
             
       - uses: actions/checkout@v3
+        env:
+            GITHUB_TOKEN: ${{ secrets.GHA-TEST }}
 
       - name: Get All users from simple API
         run: |
@@ -31,6 +33,6 @@ jobs:
             git status
             git config user.name github-actions
             git config user.email github-actions@github.com
-            git add .github/workflows/user-deployment.yml
+            git add -A
             git commit -m 'Overwritten by Github Actions'
             git push
