@@ -18,7 +18,7 @@ jobs:
           # path: .github/workflows
       
       - run: |
-          sed "s/\$USER_OPTIONS/- two/" .github/workflows/user-deployment.yml
+          sed -i "s/\$USER_OPTIONS/- two/" .github/workflows/user-deployment.yml > .github/workflows/user-deployment.yml
           git config user.name mariiapaniutina
           git config user.email mariia.paniutina@gmail.com
           git add -A
