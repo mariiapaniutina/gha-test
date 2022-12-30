@@ -9,14 +9,17 @@ jobs:
     runs-on: ubuntu-latest
     steps:
           
-      - name: Checkout ...
-        uses: actions/checkout@v3
-        with:
-          # repository: mariiapaniutina/gha-test
-          token: ${{ secrets.GHA_1 }}
-          # token: ${{ github.token }}
-          # path: .github/workflows
+      #- name: Checkout ...
+      #  uses: actions/checkout@v3
+      #  with:
+      #    # repository: mariiapaniutina/gha-test
+      #    token: ${{ secrets.GHA_1 }}
+      #    # token: ${{ github.token }}
+      #    # path: .github/workflows
       
+      - name: committing in workflow
+        env:
+          GITHUB_TOKEN: ${{ secrets.GHA_1}}
       - run: |
           sed "s/\$USER_OPTIONS/- two/" .github/workflows/user-deployment.yml > .github/workflows/user-deployment.yml
           git status
