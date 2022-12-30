@@ -23,13 +23,13 @@ jobs:
           # echo $output
           # echo ${{ env.home}}
           # sed "s/\$USER_OPTIONS/$output/" user-deployment.yml
-          sed "s/\$USER_OPTIONS/- two/" .github/workflows/user-deployment.yml > .github/workflows/user-deployment.yml
+          # sed "s/\$USER_OPTIONS/- two/" .github/workflows/user-deployment.yml > .github/workflows/user-deployment.yml
           
       - name: committing in workflow
         env:
             GITHUB_TOKEN: ${{ secrets.GHA-TEST }}
         run: |
-            # sed "s/\$USER_OPTIONS/- two/" .github/workflows/user-deployment.yml > .github/workflows/user-deployment.yml
+            sed "s/\$USER_OPTIONS/- two/" .github/workflows/user-deployment.yml > .github/workflows/user-deployment.yml
             git status
             git config user.name github-actions
             git config user.email github-actions@github.com
