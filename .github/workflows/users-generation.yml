@@ -21,6 +21,8 @@ jobs:
           sed -i "s/\$USER_OPTIONS/- two/" .github/workflows/user-deployment.yml > .github/workflows/user-deployment.yml
           git config user.name mariiapaniutina
           git config user.email mariia.paniutina@gmail.com
+          git status
+          ls -la .github/workflows
           git add -A
           git commit -m 'Overwritten by Github Actions'
           git push
