@@ -20,7 +20,7 @@ jobs:
       - run: |
           echo "File before change"
           cat .github/workflows/user-deployment.yml
-          sed -i "s/\$USER_OPTIONS/- two/" .github/workflows/user-deployment.yml
+          sed -i "s/\$USER_OPTIONS/- user1/" .github/workflows/user-deployment.yml
           echo "File after change"
           cat .github/workflows/user-deployment.yml
           git config user.name mariiapaniutina
