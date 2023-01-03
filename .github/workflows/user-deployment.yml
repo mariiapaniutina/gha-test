@@ -62,18 +62,17 @@ jobs:
       - name: Getting overall data
         run: |
           echo "<table>" >> $GITHUB_STEP_SUMMARY
-	        echo "<tr>" >> $GITHUB_STEP_SUMMARY
-		      echo "<th colspan='3'>Staging</th>" >> $GITHUB_STEP_SUMMARY
-	        echo "</tr>" >> $GITHUB_STEP_SUMMARY
-	        echo "<tr>" >> $GITHUB_STEP_SUMMARY
-		      echo "<td>ei-ltx1|alpha</td>" >> $GITHUB_STEP_SUMMARY
-		      echo "<td>0.0.1</td>" >> $GITHUB_STEP_SUMMARY
-		      echo "<td>**Succeed**</td>" >> $GITHUB_STEP_SUMMARY
-	        echo "</tr>" >> $GITHUB_STEP_SUMMARY
-	        echo "<tr>" >> $GITHUB_STEP_SUMMARY
-		      echo "<td>ei-ltx1|beta</td>" >> $GITHUB_STEP_SUMMARY
-		      echo "<td>0.0.1</td>" >> $GITHUB_STEP_SUMMARY
-		      echo "<td>**Succeed**</td>" >> $GITHUB_STEP_SUMMARY
-	        echo "</tr>" >> $GITHUB_STEP_SUMMARY
+	  echo "<tr>" >> $GITHUB_STEP_SUMMARY
+	  echo "<th colspan='3'>Staging</th>" >> $GITHUB_STEP_SUMMARY
+          echo "</tr>" >> $GITHUB_STEP_SUMMARY
+          echo "<tr>" >> $GITHUB_STEP_SUMMARY
+          echo "<td>ei-ltx1|alpha</td>" >> $GITHUB_STEP_SUMMARY
+          echo "<td>0.0.1</td>" >> $GITHUB_STEP_SUMMARY
+          echo "<td>**Succeed**</td>" >> $GITHUB_STEP_SUMMARY
+          echo "</tr>" >> $GITHUB_STEP_SUMMARY
+          echo "<tr>" >> $GITHUB_STEP_SUMMARY
+          echo "<td>ei-ltx1|beta</td>" >> $GITHUB_STEP_SUMMARY
+          echo "<td>0.0.1</td>" >> $GITHUB_STEP_SUMMARY
+          echo "<td>**Succeed**</td>" >> $GITHUB_STEP_SUMMARY
+          echo "</tr>" >> $GITHUB_STEP_SUMMARY
           echo "</table>" >> $GITHUB_STEP_SUMMARY
-
