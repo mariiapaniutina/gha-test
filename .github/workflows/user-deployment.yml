@@ -61,8 +61,8 @@ jobs:
     steps:
       - name: Getting overall data
         run: |
-          echo "| Staging  |   |   |" >> $GITHUB_STEP_SUMMARY
+          echo "| *Staging*  |   |   |" >> $GITHUB_STEP_SUMMARY
           echo "| ------------ | ------------ | ------------ |" >> $GITHUB_STEP_SUMMARY
-          echo "| ei-ltx1 alpha  | 0.0.2  | Succeed |" >> $GITHUB_STEP_SUMMARY
-          echo "| ei-ltx1 beta  | 0.0.1  |Succeed  |" >> $GITHUB_STEP_SUMMARY
+          echo "| ei-ltx1 alpha  | 0.0.2  | *Succeed* |" >> $GITHUB_STEP_SUMMARY
+          echo "| ei-ltx1 beta  | 0.0.1  |*Succeed*  |" >> $GITHUB_STEP_SUMMARY
 
