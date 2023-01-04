@@ -23,7 +23,7 @@ jobs:
           # sed -i "s/\$USER_OPTIONS/- user1/" .github/workflows/user-deployment.yml
           #RANDOM_USER=$((1 + $RANDOM % 10))
           #REPLACE_STR='      name:        type: choice        description: List of usernames        options:          -user'
-          sed -i -E "/\s*name:\s*type: choice\s*description: List of usernames\s*options:\s*[-{1}\s\[a-zA-Z0-9]*]?$/      name:        type: choice        description: List of usernames        options:          -user123/g"  .github/workflows/user-deployment.yml
+          sed -i -E "/\s*name:\s*type: choice\s*description: List of usernames\s*options:\s*[-{1}\s\[a-zA-Z0-9]*]?$/      name:\n        type: choice\n        description: List of usernames\n        options:\n          -user/g"  .github/workflows/user-deployment.yml
           #echo "File after change"
           #cat .github/workflows/user-deployment.yml
           git config user.name mariiapaniutina
