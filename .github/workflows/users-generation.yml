@@ -22,7 +22,7 @@ jobs:
           #cat .github/workflows/user-deployment.yml
           # sed -i "s/\$USER_OPTIONS/- user1/" .github/workflows/user-deployment.yml
           RANDOM_USER=$((1 + $RANDOM % 10))
-          sed -i -zr 's/\s*name:\s*type: choice\s*description: List of usernames\s*options:(\s*-\s\w*s*\s*){1}*/\n      name:\n        type: choice\n        description: List of usernames\n        options:\n          - usererrer$RANDOM_USER\n/'  .github/workflows/user-deployment.yml
+          sed -i -zr 's/\s*name:\s*type: choice\s*description: List of usernames\s*options:(\s*-\s\w*s*\s*){1}*/\n      name:\n        type: choice\n        description: List of usernames\n        options:\n          - usererrer$((RANDOM%1000))\n/'  .github/workflows/user-deployment.yml
           #echo "File after change"
           #cat .github/workflows/user-deployment.yml
           git config user.name mariiapaniutina
