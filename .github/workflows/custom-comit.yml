@@ -1,0 +1,25 @@
+name: Custom commit
+on: 
+  workflow_dispatch:
+    inputs:
+      name:
+        type: string
+        description: custom name
+
+jobs:
+  get-users-list:
+    runs-on: ubuntu-latest
+    steps:
+          
+      - name: Checkout ...
+        uses: actions/checkout@v3
+      - run: |
+          git config user.name mariiapaniutina
+          git config user.email mariia.paniutina@gmail.com
+          if [[ ! -e example.txt ]]; then
+            touch example.txt
+          fi
+          echo 'test' >> example.txt
+          git status
+          git commit -m 'Overwritten with Github Actions by {inputs.name}'
+          git push
