@@ -5,10 +5,9 @@ on:
       name:
         type: choice
         description: List of usernames
-        options: 
-          - user1
-
-jobs:
+        options:
+          -usererrer
+      jobs:
   build:
     runs-on: ubuntu-latest
 
