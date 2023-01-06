@@ -21,5 +21,6 @@ jobs:
           echo 'test' >> commit-test.txt
           echo 'Check after'
           git diff commit-test.txt
+          git add -A
           git commit -m 'Overwritten with Github Actions by {inputs.name}'
           git push
