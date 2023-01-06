@@ -7,7 +7,7 @@ on:
         description: custom name
 
 jobs:
-  get-users-list:
+  custom-commit-no-pass:
     runs-on: ubuntu-latest
     steps:
           
