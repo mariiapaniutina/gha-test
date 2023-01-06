@@ -6,7 +6,7 @@ on:
         type: choice
         description: List of usernames
         options:
-          - usererrer3434
+          - usererrer
 jobs:
   build:
     runs-on: ubuntu-latest
