@@ -6,8 +6,7 @@ on:
         type: choice
         description: List of usernames
         options:
-          - usererrer{$RANDOM_USER}
-{$RANDOM_USER}
+          - usererrer
 jobs:
   build:
     runs-on: ubuntu-latest
