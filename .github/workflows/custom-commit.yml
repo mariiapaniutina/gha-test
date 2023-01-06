@@ -14,12 +14,12 @@ jobs:
       - name: Checkout ...
         uses: actions/checkout@v3
       - run: |
+          echo 'Check before'
+          git diff commit-test.txt
           git config user.name mariiapaniutina
           git config user.email mariia.paniutina@gmail.com
-          if [[ ! -e example.txt ]]; then
-            touch example.txt
-          fi
-          echo 'test' >> example.txt
-          git status
+          echo 'test' >> commit-test.txt
+          echo 'Check after'
+          git diff commit-test.txt
           git commit -m 'Overwritten with Github Actions by {inputs.name}'
           git push
