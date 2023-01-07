@@ -37,6 +37,7 @@
     "ember-cli-dependency-checker": "^3.3.1",
     "ember-cli-htmlbars": "^6.1.1",
     "ember-cli-inject-live-reload": "^2.1.0",
+    "ember-cli-sass": "^11.0.1",
     "ember-cli-sri": "^2.1.1",
     "ember-cli-terser": "^4.0.2",
     "ember-data": "~4.9.1",
@@ -57,6 +58,7 @@
     "prettier": "^2.8.1",
     "qunit": "^2.19.3",
     "qunit-dom": "^2.0.0",
+    "sass": "^1.57.1",
     "webpack": "^5.75.0"
   },
   "engines": {
@@ -64,5 +66,10 @@
   },
   "ember": {
     "edition": "octane"
+  },
+  "dependencies": {
+    "@octokit/core": "^4.1.0",
+    "@octokit/rest": "^19.0.5",
+    "@primer/css": "^20.8.0"
   }
 }

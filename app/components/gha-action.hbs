@@ -1,0 +1,10 @@
+<button onclick={{this.getGHAAction}}>Get list of workflows</button>
+<ul>
+  {{#each this.workflows as |workflow|}}
+    <li>
+        ID: <b>{{workflow.id}}</b><br/>
+        NODE_ID: <b>{{workflow.node_id}}</b><br/>
+        Name: <b>{{workflow.name}}</b> <br /><br />
+    </li>
+  {{/each}}
+</ul>
