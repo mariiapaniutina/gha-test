@@ -1,10 +1,12 @@
-<button onclick={{this.getGHAAction}}>Get list of workflows</button>
+<button onclick={{this.getGHAWorkflows}}>Get list of workflows</button>
+
 <ul>
   {{#each this.workflows as |workflow|}}
     <li>
-        ID: <b>{{workflow.id}}</b><br/>
-        NODE_ID: <b>{{workflow.node_id}}</b><br/>
-        Name: <b>{{workflow.name}}</b> <br /><br />
+        <b>{{workflow.name}}</b>
+        {{#if (eq workflow.name 'User deployment')}}
+          <button onclick={{fn this.onDeployWorkflow workflow.id}}>Deploy!</button>
+        {{/if}}
     </li>
   {{/each}}
 </ul>
