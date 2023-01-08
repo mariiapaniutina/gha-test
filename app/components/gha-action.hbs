@@ -1,12 +1,25 @@
 <button onclick={{this.getGHAWorkflows}}>Get list of workflows</button>
 
 <ul>
-  {{#each this.workflows as |workflow|}}
+  {{#each-in this.workflows as |name workflow|}}
     <li>
-        <b>{{workflow.name}}</b>
-        {{#if (eq workflow.name 'User deployment')}}
+        <b>{{name}}</b>
+        <ul>
+          {{#each workflow.runs as |run|}}
+          <li>{{run.head_sha}} - {{run.conclusion}}</li>
+          {{/each}}
+        </ul>
+        {{#if (eq name 'User deployment')}}
           <button onclick={{fn this.onDeployWorkflow workflow.id}}>Deploy!</button>
         {{/if}}
     </li>
+  {{/each-in}}
+</ul>
+
+List of jobs per head_sha: <b>e2dc78e2633544c84c991a1878ac32c95b9770b3</b>
+<ul>
+  {{#each this.workflowsSHARuns as |run|}}
+    <li><b>{{run.name}}</b> - {{run.conclusion}}</li>
   {{/each}}
 </ul>
+
