@@ -1,0 +1,18 @@
+name: pre-commit-just-for-alex
+
+on:
+  pull_request:
+  push:
+    branches: [main]
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Getting overall data
+        run: |
+          echo "User name: test" >> $GITHUB_STEP_SUMMARY
+          echo "Age: 34" >> $GITHUB_STEP_SUMMARY
+          echo "Type: Admin" >> $GITHUB_STEP_SUMMARY
+          echo "Control level: Boss" >> $GITHUB_STEP_SUMMARY
