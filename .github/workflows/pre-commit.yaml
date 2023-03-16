@@ -6,9 +6,13 @@ on:
     branches: [main]
 
 jobs:
-  pre-commit:
+  build:
     runs-on: ubuntu-latest
+
     steps:
-    - uses: actions/checkout@v3
-    - uses: actions/setup-python@v3
-    - uses: pre-commit/action@v3.0.0
+      - name: Getting overall data
+        run: |
+          echo "User name: test" >> $GITHUB_STEP_SUMMARY
+          echo "Age: 34" >> $GITHUB_STEP_SUMMARY
+          echo "Type: Admin" >> $GITHUB_STEP_SUMMARY
+          echo "Control level: Boss" >> $GITHUB_STEP_SUMMARY
