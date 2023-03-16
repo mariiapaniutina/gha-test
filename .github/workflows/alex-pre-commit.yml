@@ -1,4 +1,4 @@
-name: pre-commit
+name: pre-commit-just-for-alex
 
 on:
   pull_request:
